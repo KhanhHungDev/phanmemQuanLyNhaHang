@@ -1,0 +1,60 @@
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\bin\Debug\DAL.exe.config
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\bin\Debug\DAL.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\bin\Debug\DAL.pdb
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\bin\Debug\DTO.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\bin\Debug\DTO.pdb
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\obj\Debug\DAL.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DAL\obj\Debug\DAL.pdb
+E:\QLBH-18DTH2A\DAL\bin\Debug\DAL.exe.config
+E:\QLBH-18DTH2A\DAL\bin\Debug\DAL.exe
+E:\QLBH-18DTH2A\DAL\bin\Debug\DAL.pdb
+E:\QLBH-18DTH2A\DAL\bin\Debug\DTO.exe
+E:\QLBH-18DTH2A\DAL\bin\Debug\DTO.pdb
+E:\QLBH-18DTH2A\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\QLBH-18DTH2A\DAL\obj\Debug\DAL.Properties.Resources.resources
+E:\QLBH-18DTH2A\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+E:\QLBH-18DTH2A\DAL\obj\Debug\DAL.exe
+E:\QLBH-18DTH2A\DAL\obj\Debug\DAL.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\bin\Debug\DAL.exe.config
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\bin\Debug\DAL.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\bin\Debug\DAL.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\bin\Debug\DTO.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\bin\Debug\DTO.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\obj\Debug\DAL.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DAL\obj\Debug\DAL.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\bin\Debug\DAL.exe.config
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\bin\Debug\DAL.exe
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\bin\Debug\DAL.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\bin\Debug\DTO.exe
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\bin\Debug\DTO.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\obj\Debug\DAL.exe
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\DAL\obj\Debug\DAL.pdb
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\bin\Debug\DAL.exe.config
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\bin\Debug\DAL.exe
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\bin\Debug\DAL.pdb
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\bin\Debug\DTO.exe
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\bin\Debug\DTO.pdb
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.exe
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\bin\Debug\DAL.exe.config
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\bin\Debug\DAL.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\bin\Debug\DAL.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\bin\Debug\DTO.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\bin\Debug\DTO.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DAL\obj\Debug\DAL.pdb

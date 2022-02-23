@@ -1,0 +1,466 @@
+﻿USE QL_NhaHang
+GO
+----------1.Viết Stored Procedure thêm khách hàng mới
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_ThemKH')
+	DROP PROC pr_ThemKH
+GO
+CREATE PROC pr_ThemKH
+(
+	@MSKH			CHAR(10),
+	@TENKH			NVARCHAR(30),
+	@PHAI			NCHAR(5),
+	@DIACHI			NVARCHAR(100),
+	@DIENTHOAI		VARCHAR(10)
+)
+AS
+BEGIN
+	IF EXISTS(SELECT MSKH FROM KHACHHANG WHERE MSKH = @MSKH)
+	BEGIN
+		RAISERROR(N'Mã khách hàng: %s này đã tồn tại!!!!...Huhuhuhu', 16, 1, @MSKH)
+	END
+	ELSE
+	BEGIN
+		INSERT INTO KHACHHANG(MsKH, TENKH, PHAI, DIACHI, DIENTHOAI)
+			VALUES(@MsKH, @TENKH, @PHAI, @DIACHI, @DIENTHOAI)
+		RAISERROR(N'Thêm khách hàng: %s - %s MỚI này thành công!!!...Kakakakaka', 16, 1, @MSKH, @TENKH)
+	END
+END
+GO
+----------2.Viết Stored Procedure sửa khách hàng: TENKH, PHAI, DIACHI, DIENTHOAI
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME='pr_SuaKH')
+	DROP PROC pr_SuaKH
+GO
+CREATE PROC pr_SuaKH
+(
+	@MSKH			CHAR(10),
+	@TENKH			NVARCHAR(30),
+	@PHAI			NCHAR(5),
+	@DIACHI			NVARCHAR(100),
+	@DIENTHOAI		VARCHAR(10)
+)
+AS
+BEGIN
+	IF EXISTS(SELECT MSKH FROM KHACHHANG WHERE MsKH = @MSKH)
+	BEGIN
+		UPDATE KHACHHANG
+		SET		TENKH = @TENKH,
+				PHAI = @PHAI,
+				DIACHI = @DIACHI,
+				DIENTHOAI = @DIENTHOAI
+		WHERE  MsKH = @MSKH
+		RAISERROR(N'Sửa thông tin khách hàng thành công!', 16, 1)
+	END
+	ELSE
+		RAISERROR(N'Sửa thông tin khách hàng không thành công!', 16, 1)
+END
+GO
+----------3.Viết Stored Procedure xóa khách hàng, dựa vào MsKH
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME='pr_XoaKH')
+	DROP PROC pr_XoaKH
+GO
+CREATE PROC pr_XoaKH
+(
+	@MSKH			CHAR(10)
+)
+AS
+BEGIN
+	------Trường hợp 1: Khách hàng chưa có hóa đơn
+	IF EXISTS(SELECT MSKH FROM KHACHHANG WHERE MsKH = @MSKH)
+		IF NOT EXISTS(SELECT MSKH FROM HOADON WHERE MSKH = @MSKH)
+		BEGIN
+			DELETE KHACHHANG WHERE MsKH = @MSKH
+			RAISERROR(N'Đã xóa thành công khách hàng chưa có mua hàng!', 16, 1)
+		END
+	ELSE
+		------Trường hợp 2: Khách hàng đã mua hàng
+		IF EXISTS(SELECT * FROM HOADON hd, CHITIET_HD ct WHERE hd.MSHD = ct.MSHD and hd.MSKH = @MSKH)
+		BEGIN
+			declare @hd char(10)
+			SELECT @hd = MSHD FROM HOADON WHERE MSKH = @MSKH
+			----------------------------------------------
+			DELETE CHITIET_HD WHERE MSHD = @hd				--Xóa các mặt hàng theo hóa đơn
+			DELETE HOADON WHERE MSKH = @MSKH AND MSHD = @hd	--Xóa các hơn đơn theo khách hàng
+			DELETE KHACHHANG WHERE MsKH = @MSKH				--Xóa khách hàng trong bảng khách hàng
+		END
+END
+GO
+----------4.Viết Stored Procedure báo cáo doanh số cho từng mặt hàng theo [từ ngày - đến ngày]
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_BCDSMH')
+	DROP PROC pr_BCDSMH
+GO
+CREATE PROC pr_BCDSMH
+(
+	@TUNGAY		DATETIME,
+	@DENNGAY	DATETIME
+)
+AS
+BEGIN
+		SELECT	mh.MAMON,
+				mh.TENMON,
+				mh.DONVITINH,
+				sum(ct.SOLUONG) AS SOLUONG,
+				sum(ct.SOLUONG*mh.DONGIA) as THANHTIEN
+		FROM	HOADON hd, CHITIET_HD ct, MONAN mh
+		WHERE	hd.MSHD = ct.MSHD	and
+				ct.MAMON = mh.MAMON	and
+				hd.NGAYHD Between @TUNGAY and @DENNGAY
+		GROUP BY mh.MAMON,
+				 mh.TENMON,
+				 mh.DONVITINH
+END
+GO
+----------5.Viết Stored Procedure để tạo Mã số hóa đơn
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_TaoMAHD')
+	DROP PROC pr_TaoMAHD
+GO
+CREATE PROC pr_TaoMAHD
+AS
+BEGIN
+	IF NOT EXISTS(SELECT * FROM HOADON)
+		PRINT 'HD'+	CAST(YEAR(GETDATE()) AS VARCHAR) + 
+							CAST(MONTH(GETDATE()) AS VARCHAR) + 
+							CAST(DAY(GETDATE()) AS VARCHAR) + '001'
+	ELSE
+	BEGIN
+		DECLARE @HD1 VARCHAR(10),
+				@HD2 VARCHAR(15),
+				@T1 INT
+		SELECT @HD1 = MAX(RTRIM(MSHD)) FROM HOADON
+		SET @T1 = RIGHT(@HD1, 3) + 1
+
+		IF LEN(@T1)=1
+			SET @HD2 = 'HD'+	CAST(YEAR(GETDATE()) AS VARCHAR) + 
+								CAST(MONTH(GETDATE()) AS VARCHAR) + 
+								CAST(DAY(GETDATE()) AS VARCHAR) + '00' + CAST(@T1 AS VARCHAR)
+		ELSE
+			IF LEN(@T1)=2 
+				SET @HD2 = 'HD'+	CAST(YEAR(GETDATE()) AS VARCHAR) + 
+									CAST(MONTH(GETDATE()) AS VARCHAR) + 
+									CAST(DAY(GETDATE()) AS VARCHAR) + '0' + CAST(@T1 AS VARCHAR)
+			ELSE
+				IF LEN(@T1)=3
+					SET @HD2 = 'HD'+	CAST(YEAR(GETDATE()) AS VARCHAR) + 
+										CAST(MONTH(GETDATE()) AS VARCHAR) + 
+										CAST(DAY(GETDATE()) AS VARCHAR) + CAST(@T1 AS VARCHAR)
+		PRINT @HD2
+	END
+END
+GO
+--EXEC pr_TaoMAHD
+
+GO
+---Pro thêm nhân viên-----
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_ThemNV')
+	DROP PROC pr_ThemNV
+GO
+CREATE PROC pr_ThemNV
+(
+	@MANV			CHAR(10),
+	@TENNV			NVARCHAR(30),
+	@TENDANGNHAP          NVARCHAR(256),
+	@NGAYSINH       DATETIME,
+	@PHAI			NCHAR(10),
+	@DIACHI			NVARCHAR(50),
+	@DIENTHOAI		VARCHAR(10),
+	@SO_HD_THUCHIEN  INT,
+	@NGAYDANGNHAP    DATETIME,
+	@SOLANDN         INT,
+	@QUYENHAN        NVARCHAR(20)
+)
+AS
+BEGIN
+	IF EXISTS(SELECT MANV FROM NHANVIEN WHERE MANV = @MANV)
+	BEGIN
+		RAISERROR(N'Mã nhân viên: %s này đã tồn tại!!!!...Huhuhuhu', 16, 1, @MANV)
+	END
+	ELSE
+	BEGIN
+		INSERT INTO NHANVIEN(MANV, TENNV, TENDANGNHAP, NGAYSINH, PHAI,DIACHI,DIENTHOAI,SO_HD_THUCHIEN,NGAYDANGNHAP,SOLANDN,QUYENHAN)
+			VALUES(@MANV, @TENNV,@TENDANGNHAP, @NGAYSINH, @PHAI,@DIACHI,@DIENTHOAI,@SO_HD_THUCHIEN,@NGAYDANGNHAP,@SOLANDN,@QUYENHAN)
+		RAISERROR(N'Thêm nhân viên: %s - %s MỚI này thành công!!!...Kakakakaka', 16, 1, @MANV, @TENNV)
+	END
+END
+GO
+
+-----Proc Sửa nhân viên
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_SuaNV')
+	DROP PROC pr_SuaNV
+GO
+CREATE PROC pr_SuaNV
+(
+	
+	----
+	@MANV			CHAR(10),
+	@TENNV			NVARCHAR(30),
+	@TENDANGNHAP    NVARCHAR(256),
+	@NGAYSINH       DATETIME,
+	@PHAI			NCHAR(10),
+	@DIACHI			NVARCHAR(50),
+	@DIENTHOAI		VARCHAR(10),
+	@SO_HD_THUCHIEN  INT,
+	@NGAYDANGNHAP    DATETIME,
+	@SOLANDN         INT,
+	@QUYENHAN        NVARCHAR(20)
+)
+AS
+BEGIN
+	IF EXISTS(SELECT MANV FROM NHANVIEN WHERE MANV = @MANV)
+	BEGIN
+		UPDATE NHANVIEN
+		SET		TENNV = @TENNV,
+		        TENDANGNHAP = @TENDANGNHAP,
+				NGAYSINH  =@NGAYSINH,  
+				PHAI = @PHAI,
+				DIACHI = @DIACHI,
+				DIENTHOAI = @DIENTHOAI,
+				SO_HD_THUCHIEN=@SO_HD_THUCHIEN,
+				NGAYDANGNHAP=@NGAYDANGNHAP,
+				SOLANDN = @SOLANDN,
+				QUYENHAN=@QUYENHAN
+		WHERE  MANV = @MANV
+		RAISERROR(N'Sửa thông tin nhân viên thành công!', 16, 1)
+	END
+	ELSE
+		RAISERROR(N'Sửa thông tin nhân viên không thành công!', 16, 1)
+END
+GO
+---------Xoa NV
+ IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_XoaNV')
+	DROP PROC pr_XoaNV
+GO
+ CREATE PROC pr_XoaNV
+(
+	@MANV			CHAR(10)
+)
+AS
+BEGIN
+	------Trường hợp 1: Khách hàng chưa có hóa đơn(Copy tí thôi kakaka!)
+	IF EXISTS(SELECT MANV FROM NHANVIEN WHERE MANV = @MANV)
+		IF NOT EXISTS(SELECT MANV FROM HOADON WHERE MANV = @MANV)
+		BEGIN
+			DELETE NHANVIEN WHERE MANV = @MANV
+			RAISERROR(N'Đã xóa thành công nhân viên này!', 16, 1)
+		END
+	ELSE
+		------Trường hợp 2: Khách hàng đã mua hàng
+		IF EXISTS(SELECT * FROM HOADON hd, CHITIET_HD ct WHERE hd.MSHD = ct.MSHD and hd.MANV = @MANV)
+		BEGIN
+			declare @hd char(10)
+			SELECT @hd = MSHD FROM HOADON WHERE MANV = @MANV
+			
+			DELETE CHITIET_HD WHERE MSHD = @hd				--Xóa các mặt hàng theo hóa đơn
+			DELETE HOADON WHERE MANV = @MANV AND MSHD = @hd	--Xóa các hơn đơn theo khách hàng
+			DELETE NHANVIEN WHERE MANV = @MANV				--Xóa khách hàng trong bảng khách hàng
+		END
+END
+GO
+
+
+------proc thêm món ăn -------
+
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_ThemMon')
+	DROP PROC pr_ThemMon
+GO
+CREATE PROC pr_ThemMon
+(
+	@MAMON			CHAR(10),
+	@TENMON			NVARCHAR(50),
+	@SL			    INT,
+	@DONGIA		    FLOAT,
+	@DONVITINH	    NCHAR(10)
+)
+AS
+BEGIN
+	IF EXISTS(SELECT MAMON FROM MONAN WHERE MAMON = @MAMON)
+	BEGIN
+		RAISERROR(N'Mã món ăn: %s này đã tồn tại!!!!...Huhuhuhu', 16, 1, @MAMON)
+	END
+	ELSE
+	BEGIN
+		INSERT INTO MONAN(MAMON, TENMON, SL, DONGIA, DONVITINH)
+			VALUES(@MAMON, @TENMON, @SL, @DONGIA, @DONVITINH)
+		RAISERROR(N'Thêm món ăn: %s - %s MỚI này thành công!!!...meowmeowmeow', 16, 1, @MAMON, @TENMON)
+	END
+END
+GO
+
+---proc sửa món ăn
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_SuaMonAN')
+	DROP PROC pr_SuaMonAN
+GO
+CREATE PROC pr_SuaMonAN
+(
+	@MAMON			CHAR(10),
+	@TENMON			NVARCHAR(50),
+	@SL			    INT,
+	@DONGIA		    FLOAT,
+	@DONVITINH	    NCHAR(10)
+)
+AS
+BEGIN
+	IF EXISTS(SELECT MAMON FROM MONAN WHERE MAMON = @MAMON)
+	BEGIN
+		UPDATE MONAN
+		SET		TENMON = @TENMON,
+				SL = @SL,
+				DONGIA = @DONGIA,
+				DONVITINH = @DONVITINH
+		WHERE  MAMON = @MAMON
+		RAISERROR(N'Sửa thông tin món ăn thành công!', 16, 1)
+	END
+	ELSE
+		RAISERROR(N'Sửa thông tin món ăn không thành công!', 16, 1)
+END
+GO
+
+
+-------proc xóa món ăn
+
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_XoaMonAn')
+	DROP PROC pr_XoaMonAn
+GO
+ CREATE PROC pr_XoaMonAn
+(
+	@MAMON			CHAR(10)
+)
+AS
+BEGIN
+	------Trường hợp 1: Khách hàng chưa có hóa đơn(Copy tí thôi kakaka!)
+	IF EXISTS(SELECT MAMON FROM MONAN WHERE MAMON = @MAMON)
+		IF NOT EXISTS(SELECT MANV FROM HOADON WHERE MANV = @MAMON)
+		BEGIN
+			DELETE MONAN WHERE MAMON = @MAMON
+			RAISERROR(N'Đã xóa thành công món ăn  này!', 16, 1)
+		END
+	ELSE
+		------Trường hợp 2: Khách hàng đã mua hàng(Giống như trên :))))
+		IF EXISTS(SELECT * FROM HOADON hd, CHITIET_HD ct WHERE hd.MSHD = ct.MSHD and hd.MANV = @MAMON)
+		BEGIN
+			declare @hd char(10)
+			SELECT @hd = MSHD FROM HOADON WHERE MANV = @MAMON
+			--------------------------------------------------Quên xóa :))-----
+			DELETE CHITIET_HD WHERE MSHD = @hd				--Xóa các mặt hàng theo hóa đơn
+			DELETE HOADON WHERE MANV = @MAMON AND MSHD = @hd	--Xóa các hơn đơn theo khách hàng
+			DELETE NHANVIEN WHERE MANV = @MAMON				--Xóa khách hàng trong bảng khách hàng
+		END
+END
+GO
+
+--------------------------------------------------
+GO
+----------8.Viết Stored Procedure để tạo Mã số hóa đơn
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'pr_TaoMAHD')
+	DROP PROC pr_TaoMAHD
+GO
+CREATE PROC pr_TaoMAHD
+AS
+BEGIN
+	IF NOT EXISTS(SELECT * FROM HOADON)
+		SELECT 'HD'+ CAST(YEAR(GETDATE()) AS VARCHAR) + 
+					 CAST(MONTH(GETDATE()) AS VARCHAR) + 
+					 CAST(DAY(GETDATE()) AS VARCHAR) + '001'
+	ELSE
+	BEGIN
+		DECLARE @HD1 VARCHAR(15),
+				@HD2 VARCHAR(15),
+				@T1 INT
+		SELECT @HD1 = MAX(RTRIM(MSHD)) FROM HOADON
+		SET @T1 = RIGHT(@HD1, 3) + 1
+
+		IF LEN(@T1)=1
+			SET @HD2 = 'HD'+	CAST(YEAR(GETDATE()) AS VARCHAR) + 
+								CAST(MONTH(GETDATE()) AS VARCHAR) + 
+								CAST(DAY(GETDATE()) AS VARCHAR) + '00' + CAST(@T1 AS VARCHAR)
+		ELSE
+			IF LEN(@T1)=2
+				SET @HD2 = 'HD'+	CAST(YEAR(GETDATE()) AS VARCHAR) + 
+									CAST(MONTH(GETDATE()) AS VARCHAR) + 
+									CAST(DAY(GETDATE()) AS VARCHAR) + '0' + CAST(@T1 AS VARCHAR)
+			ELSE
+				IF LEN(@T1)=3
+					SET @HD2 = 'HD'+	CAST(YEAR(GETDATE()) AS VARCHAR) + 
+										CAST(MONTH(GETDATE()) AS VARCHAR) + 
+										CAST(DAY(GETDATE()) AS VARCHAR) + CAST(@T1 AS VARCHAR)
+		SELECT @HD2
+	END
+END
+GO
+--EXEC pr_TaoMAHD
+ 
+ GO
+----------9.Viết Stored Procedure lập hóa đơn bán hàng
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME='prThemHD')
+	DROP PROC prThemHD
+GO
+CREATE PROC prThemHD
+(
+	--------------------HOADON
+	@MSHD		CHAR(15), 
+	@MANV		CHAR(10), 
+	@MsKH		CHAR(10), 
+	@NGAYHD		DATETIME, 
+	@TONGTIEN	FLOAT,
+	--------------------CHITIET_HD
+	@MAMON	CHAR(10), 
+	@SOLUONG	INT, 
+	@THANHTIEN	FLOAT
+)
+AS
+BEGIN
+	SET DATEFORMAT DMY
+	BEGIN TRANSACTION TEO
+	DECLARE	@ERR1 INT,
+			@ERR2 INT
+	IF NOT EXISTS(SELECT MSHD FROM HOADON WHERE MSHD = @MSHD)
+	BEGIN
+		INSERT INTO HOADON(MSHD, MANV, MSKH, NGAYHD, TONGTIEN)
+			VALUES(@MSHD, @MANV, @MSKH, @NGAYHD, @TONGTIEN)
+		SET @ERR1 = @@ERROR
+		INSERT INTO CHITIET_HD(MSHD, MAMON, SOLUONG, THANHTIEN)
+		VALUES(@MSHD, @MAMON, @SOLUONG, @THANHTIEN)
+	SET @ERR2 = @@ERROR
+	END
+	
+
+	IF @ERR1<>0 AND @ERR2<>0
+	BEGIN
+		ROLLBACK TRANSACTION TEO
+		RAISERROR(N'Lập hóa đơn bán hàng thất bại!...huhuhuhu', 16, 1)
+	END
+	ELSE
+	BEGIN
+		COMMIT TRANSACTION TEO
+	END
+END
+GO
+SELECT * FROM HOADON
+SELECT * FROM CHITIET_HD
+GO
+----------10.Viết Stored Procedure IN hóa đơn bán hàng
+IF EXISTS(SELECT NAME FROM SYSOBJECTS WHERE NAME = 'prINHOADON')
+	DROP PROC prINHOADON
+GO
+CREATE PROC prINHOADON
+(
+	@MSHD	CHAR(15)
+)
+AS
+BEGIN
+	IF EXISTS(SELECT MSHD FROM HOADON WHERE MSHD = @MSHD)
+	BEGIN
+		SELECT	nv.MANV, nv.TENNV, nv.DIENTHOAI as DIENTHOAInv, nv.PHAI,
+				kh.MsKH, kh.TENKH, kh.DIENTHOAI as DIENTHOAIkh, kh.DIACHI,
+				hd.MSHD, hd.NGAYHD, hd.TONGTIEN,
+				ma.MAMON, ma.TENMON, ma.DONVITINH, ma.DONGIA, ct.SOLUONG, ct.THANHTIEN
+		FROM	NHANVIEN nv, HOADON hd, KHACHHANG kh, CHITIET_HD ct, MONAN ma
+		WHERE	nv.MANV = hd.MANV	and
+				hd.MSKH = kh.MsKH	and
+				hd.MSHD = ct.MSHD	and
+				ct.MAMON = ma.MAMON	and
+				hd.MSHD = @MSHD
+	END
+	--ELSE
+	--	RAISERROR(N'Bạn nhập mã số hóa đơn không đúng!', 16, 1)
+END
+GO
+

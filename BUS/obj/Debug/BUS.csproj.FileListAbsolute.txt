@@ -1,0 +1,72 @@
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\bin\Debug\BUS.exe.config
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\bin\Debug\BUS.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\bin\Debug\BUS.pdb
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\bin\Debug\DAL.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\bin\Debug\DTO.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\bin\Debug\DAL.pdb
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\bin\Debug\DTO.pdb
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\obj\Debug\BUS.csproj.GenerateResource.Cache
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\obj\Debug\BUS.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\BUS\obj\Debug\BUS.pdb
+E:\QLBH-18DTH2A\BUS\bin\Debug\BUS.exe.config
+E:\QLBH-18DTH2A\BUS\bin\Debug\BUS.exe
+E:\QLBH-18DTH2A\BUS\bin\Debug\BUS.pdb
+E:\QLBH-18DTH2A\BUS\bin\Debug\DAL.exe
+E:\QLBH-18DTH2A\BUS\bin\Debug\DTO.exe
+E:\QLBH-18DTH2A\BUS\bin\Debug\DAL.pdb
+E:\QLBH-18DTH2A\BUS\bin\Debug\DTO.pdb
+E:\QLBH-18DTH2A\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\QLBH-18DTH2A\BUS\obj\Debug\BUS.Properties.Resources.resources
+E:\QLBH-18DTH2A\BUS\obj\Debug\BUS.csproj.GenerateResource.Cache
+E:\QLBH-18DTH2A\BUS\obj\Debug\BUS.exe
+E:\QLBH-18DTH2A\BUS\obj\Debug\BUS.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\bin\Debug\BUS.exe.config
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\bin\Debug\BUS.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\bin\Debug\BUS.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\bin\Debug\DAL.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\bin\Debug\DTO.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\bin\Debug\DAL.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\bin\Debug\DTO.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\obj\Debug\BUS.csproj.GenerateResource.Cache
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\obj\Debug\BUS.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\BUS\obj\Debug\BUS.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\bin\Debug\BUS.exe.config
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\bin\Debug\BUS.exe
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\bin\Debug\BUS.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\bin\Debug\DAL.exe
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\bin\Debug\DTO.exe
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\bin\Debug\DAL.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\bin\Debug\DTO.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\obj\Debug\BUS.csproj.GenerateResource.Cache
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\obj\Debug\BUS.exe
+C:\Users\Windows 10 Gamer\Desktop\QLNhaHang\BUS\obj\Debug\BUS.pdb
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\bin\Debug\BUS.exe.config
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\bin\Debug\BUS.exe
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\bin\Debug\BUS.pdb
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\bin\Debug\DAL.exe
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\bin\Debug\DTO.exe
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\bin\Debug\DAL.pdb
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\bin\Debug\DTO.pdb
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.csproj.GenerateResource.Cache
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.exe
+C:\Users\Asus\Downloads\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\bin\Debug\BUS.exe.config
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\bin\Debug\BUS.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\bin\Debug\BUS.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\bin\Debug\DAL.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\bin\Debug\DTO.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\bin\Debug\DAL.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\bin\Debug\DTO.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\BUS\obj\Debug\BUS.pdb

@@ -1,0 +1,32 @@
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\bin\Debug\DTO.exe.config
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\bin\Debug\DTO.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\bin\Debug\DTO.pdb
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\obj\Debug\DTO.Properties.Resources.resources
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\obj\Debug\DTO.csproj.GenerateResource.Cache
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\obj\Debug\DTO.exe
+C:\Working\DaiHocNguyenTatThanh\Bo mon KTPM\Bai giang Bo mon KTPM\BG_Cong nghe phan mem\4\QLBH-18DTH2B\DTO\obj\Debug\DTO.pdb
+E:\QLBH-18DTH2A\DTO\bin\Debug\DTO.exe.config
+E:\QLBH-18DTH2A\DTO\bin\Debug\DTO.exe
+E:\QLBH-18DTH2A\DTO\bin\Debug\DTO.pdb
+E:\QLBH-18DTH2A\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+E:\QLBH-18DTH2A\DTO\obj\Debug\DTO.Properties.Resources.resources
+E:\QLBH-18DTH2A\DTO\obj\Debug\DTO.csproj.GenerateResource.Cache
+E:\QLBH-18DTH2A\DTO\obj\Debug\DTO.exe
+E:\QLBH-18DTH2A\DTO\obj\Debug\DTO.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\bin\Debug\DTO.exe.config
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\bin\Debug\DTO.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\bin\Debug\DTO.pdb
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\obj\Debug\DTO.Properties.Resources.resources
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\obj\Debug\DTO.csproj.GenerateResource.Cache
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\obj\Debug\DTO.exe
+C:\Users\Windows 10 Gamer\Desktop\QLBH-18DTH2A\DTO\obj\Debug\DTO.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\bin\Debug\DTO.exe.config
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\bin\Debug\DTO.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\bin\Debug\DTO.pdb
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\obj\Debug\DTO.Properties.Resources.resources
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\obj\Debug\DTO.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\obj\Debug\DTO.exe
+C:\Users\Asus\Desktop\QLNhaHang\QLNhaHang\DTO\obj\Debug\DTO.pdb
